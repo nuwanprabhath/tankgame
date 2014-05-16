@@ -248,7 +248,7 @@ public class GameMap {
         }
         cx = x;
         cx = cx - 1;
-        while (found == false && cx <= 19) {
+        while (found == false && cx >= 0) {
             if (map[cy][cx] == "B") {
                 found = true;
                 shootDirection = 3;

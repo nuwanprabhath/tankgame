@@ -24,16 +24,17 @@ public class GameEngine {
     private int currentY;
     
     /*
-     data is the string get after joining the game S:P<num>: < player location  x>
+     data is the string get after joining the game S:P<num>; < player location  x>
      ,< player location  y>:<Direction>#
+    S:P0;0,0;2#
      */
 
     public GameEngine(String data) {
-        String[] info = data.split(":");
-        this.name = info[1];
-        this.currentX = Integer.parseInt(info[2].split(",")[0]);
-        this.currentY = Integer.parseInt(info[2].split(",")[1]);
-        this.direction = Integer.parseInt(info[3].substring(0, info[3].length() - 1));
+        String[] info = data.split(";");
+        this.name = info[0];
+        this.currentX = Integer.parseInt(info[1].split(",")[0]);
+        this.currentY = Integer.parseInt(info[1].split(",")[1]);
+        this.direction = Integer.parseInt(info[2].substring(0, info[2].length() - 1));
     }
 
     /*
